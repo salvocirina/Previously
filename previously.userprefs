@@ -1,12 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SmashButtonController.cs">
-    <Files>
-      <File FileName="Assets\Scripts\RotationController.cs" Line="55" Column="2" />
-      <File FileName="Assets\Scripts\CubeController.cs" Line="54" Column="35" />
-      <File FileName="Assets\Scripts\SmashButtonController.cs" Line="30" Column="13" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
