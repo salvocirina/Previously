@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ManageRooms.cs">
     <Files>
-      <File FileName="Assets\Scripts\ManageRooms.cs" Line="169" Column="3" />
-      <File FileName="Assets\Scripts\RotationController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ManageRooms.cs" Line="117" Column="22" />
+      <File FileName="Assets\Scripts\InfoPorte.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
