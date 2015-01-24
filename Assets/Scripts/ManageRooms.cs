@@ -30,6 +30,7 @@ public class ManageRooms : MonoBehaviour
 		private int choice = 0;
 		private bool endedGame = false;
 		private GameObject game;
+		private InfoPorte porte;
 
 		void Start ()
 		{
@@ -50,6 +51,8 @@ public class ManageRooms : MonoBehaviour
 //		rooms[2]=MakeRoom(level,roomsGamesPositions[2]);
 //		rooms[3]=MakeRoom(level-1,roomsGamesPositions[3]);
 
+				porte = rooms [0].transform.GetComponent<InfoPorte> ();
+
 		}
 
 		void Update ()
@@ -69,6 +72,7 @@ public class ManageRooms : MonoBehaviour
 										Destroy (rooms [0]);
 										rooms [0] = game;
 										newRoom = MakeRoom (level, roomsGamesPositions [4]);
+										porte = newRoom.transform.GetComponent<InfoPorte> ();
 										startTime = 0.0f;
 								}
 				
@@ -99,41 +103,44 @@ public class ManageRooms : MonoBehaviour
 								}
 						} else {		
 				
-								if (!isMoving && Input.GetKey ("1") && level != roomsToTop) {
-										//newRoom = rooms [1];
-										//startTime = 0.0f;
+							//Nulla=0, Button = 1 , Speed = 2, Enigmi = 3
+								
+								if (!isMoving && Input.GetKey ("1") && porte.containsChoice(1) ){ //&& level != roomsToTop) {
+										
 										choice = 1;
-										level += 1;
-										//isMoving = true;
+										
+										//level += 1;
+
 								}
-								if (!isMoving && Input.GetKey ("2")) {
-										//newRoom = rooms [2];
+								if (!isMoving && Input.GetKey ("2") && porte.containsChoice(1)) {
+										
 										choice = 2;
-										//startTime = 0.0f;
-										//isMoving = true;
+										
 								}
-								if (!isMoving && Input.GetKey ("3") && level != -roomsToFloor) {
-										//newRoom = rooms [3];
-										//startTime = 0.0f;
+								if (!isMoving && Input.GetKey ("3") && porte.containsChoice(1)) {// && level != -roomsToFloor) {
+										
 										choice = 3;
-										level -= 1;
-										//isMoving = true;
+										//level -= 1;
 								}
 				
 								if (choice != 0) {
 					
 										if (!isMoving) {
-												InfoPorte porte = rooms [0].transform.GetComponent<InfoPorte> ();
+												
 												porta = 0;
-												if (choice == 1)
-														porta = porte.portaSu;
-												if (choice == 2)
-														porta = porte.portaDx;
-												if (choice == 3)
-														porta = porte.portaGiu;
+												if (porte.portaSu==choice){
+													level += 1;
+													porta=1;
+												}
+												else if (porte.portaDx==choice){
+													porta=2;
+												}else if (porte.portaGiu==choice){
+													level -= 1;
+													porta=3;
+												}
 					
 					
-												game = MakeRoomGame (porta, roomsGamesPositions [choice]);
+												game = MakeRoomGame (choice, roomsGamesPositions [porta]);
 												startTime = 0.0f;
 										}
 					

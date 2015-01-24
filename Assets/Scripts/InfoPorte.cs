@@ -9,4 +9,10 @@ public class InfoPorte : MonoBehaviour {
 	public int portaDx = 2;
 	public int portaGiu = 3;
 
+
+	public bool containsChoice(int button){
+
+		return portaSu==button || portaDx==button || portaGiu==button;
+	}
+
 }
