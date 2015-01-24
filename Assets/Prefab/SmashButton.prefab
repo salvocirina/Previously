@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400020}
   - 114: {fileID: 11400018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmashController
   m_TagString: Untagged
   m_Icon: {fileID: 0}

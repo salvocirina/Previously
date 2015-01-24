@@ -2,38 +2,56 @@
 using System.Collections;
 
 public class CubeController : MonoBehaviour {
-
-	public GameObject startPosA;
-	public GameObject finalPosA;
-	public GameObject startPosX;
-	public GameObject finalPosX;
+	
+	public GameObject[] posA;
+	public GameObject[] posX;
+	public GameObject[] posY;
 	public GameObject cubeA;
 	public GameObject cubeX;
-//	public GameObject cubeY;
+	public GameObject cubeY;
 	public GameObject activeCube;
+	public GameObject winLabel;
+	private int i;
+	private int j;
+	private int k;
+	private bool canScroll;
+//	private float deadZone = 0.03f;
 	// Use this for initialization
 	void Start () {
-		cubeA.transform.position = startPosA.transform.position;
-		cubeX.transform.position = startPosX.transform.position;
+		i = 0;
+		j = 6;
+		k = 2;
+		cubeA.transform.position = posA[i].transform.position;
+		cubeX.transform.position = posX[j].transform.position;
+		cubeY.transform.position = posY[k].transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (activeCube == cubeA) {
-			if (Input.GetAxis ("Vertical") > 0) {
-				cubeA.transform.position = finalPosA.transform.position;
+			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
+				cubeA.transform.position =  posA[i--].transform.position;
 			}
-			if (Input.GetAxis ("Vertical") < 0) {
-				cubeA.transform.position = startPosA.transform.position;
+			else if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
+				cubeA.transform.position = posA[i++].transform.position;
 			}
+		
 		} else if (activeCube == cubeX) {
-			if (Input.GetAxis ("Vertical") > 0) {
-				cubeX.transform.position = startPosX.transform.position;
+			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
+				cubeX.transform.position = posX[i--].transform.position;
 			}
-			if (Input.GetAxis ("Vertical") < 0) {
-				cubeX.transform.position = finalPosX.transform.position;
+			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
+				cubeX.transform.position = posX[i++].transform.position;
+			}
+		} else if (activeCube == cubeY) {
+			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
+				cubeY.transform.position = posY[i--].transform.position;
+			}
+			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
+				cubeY.transform.position = posY[i++].transform.position;
 			}
 		}
+
 		if (Input.GetButtonDown ("A")) {
 			activeCube = cubeA;
 		}
@@ -41,5 +59,15 @@ public class CubeController : MonoBehaviour {
 		if (Input.GetButtonDown ("X")) {
 			activeCube = cubeX;
 		}
+
+		if (Input.GetButtonDown ("Y")) {
+			activeCube = cubeY;
+		}
+		if (Input.GetAxis ("Vertical") == 0)
+			canScroll = true;
+		else 
+			canScroll = false;
+		if (cubeA.transform.position == posA[3].transform.position && cubeX.transform.position == posX [3].transform.position && cubeY.transform.position == posY [3].transform.position)
+						winLabel.SetActive (true);
 	}
 }
