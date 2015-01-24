@@ -3,12 +3,12 @@ using System.Collections;
 
 public class CubeController : MonoBehaviour {
 	
-	public GameObject[] posA;
 	public GameObject[] posX;
 	public GameObject[] posY;
-	public GameObject cubeA;
+	public GameObject[] posB;
 	public GameObject cubeX;
 	public GameObject cubeY;
+	public GameObject cubeB;
 	public GameObject activeCube;
 	public GameObject winLabel;
 	private int i;
@@ -19,28 +19,20 @@ public class CubeController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		i = 0;
-		j = 6;
+		j = 5;
 		k = 2;
-		cubeA.transform.position = posA[i].transform.position;
-		cubeX.transform.position = posX[j].transform.position;
-		cubeY.transform.position = posY[k].transform.position;
+		cubeX.transform.position = posX[i].transform.position;
+		cubeY.transform.position = posY[j].transform.position;
+		cubeB.transform.position = posB[k].transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (activeCube == cubeA) {
+		if (activeCube == cubeX) {
 			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
-				cubeA.transform.position =  posA[i--].transform.position;
+				cubeX.transform.position =  posX[i--].transform.position;
 			}
 			else if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
-				cubeA.transform.position = posA[i++].transform.position;
-			}
-		
-		} else if (activeCube == cubeX) {
-			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
-				cubeX.transform.position = posX[i--].transform.position;
-			}
-			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
 				cubeX.transform.position = posX[i++].transform.position;
 			}
 		} else if (activeCube == cubeY) {
@@ -50,24 +42,31 @@ public class CubeController : MonoBehaviour {
 			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
 				cubeY.transform.position = posY[i++].transform.position;
 			}
+		} else if (activeCube == cubeB) {
+			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
+				cubeB.transform.position = posB[i--].transform.position;
+			}
+			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
+				cubeB.transform.position = posB[i++].transform.position;
+			}
 		}
 
-		if (Input.GetButtonDown ("A")) {
-			activeCube = cubeA;
-		}
-		
 		if (Input.GetButtonDown ("X")) {
 			activeCube = cubeX;
 		}
-
+		
 		if (Input.GetButtonDown ("Y")) {
 			activeCube = cubeY;
+		}
+
+		if (Input.GetButtonDown ("B")) {
+			activeCube = cubeB;
 		}
 		if (Input.GetAxis ("Vertical") == 0)
 			canScroll = true;
 		else 
 			canScroll = false;
-		if (cubeA.transform.position == posA[3].transform.position && cubeX.transform.position == posX [3].transform.position && cubeY.transform.position == posY [3].transform.position)
+		if (cubeX.transform.position == posX[3].transform.position && cubeY.transform.position == posY [3].transform.position && cubeB.transform.position == posB [3].transform.position)
 						winLabel.SetActive (true);
 	}
 }
