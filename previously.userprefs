@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BookController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\CarrucolaController.cs" Line="16" Column="30" />
+      <File FileName="Assets\Scripts\SmashButtonController.cs" Line="35" Column="47" />
+      <File FileName="Assets\Scripts\BookController.cs" Line="22" Column="8" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
