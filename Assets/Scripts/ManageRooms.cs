@@ -105,19 +105,19 @@ public class ManageRooms : MonoBehaviour
 				
 							//Nulla=0, Button = 1 , Speed = 2, Enigmi = 3
 								
-								if (!isMoving && Input.GetKey ("1") && porte.containsChoice(1) ){ //&& level != roomsToTop) {
+								if (!isMoving && Input.GetKey ("1") && porte.containsChoice(1) || Input.GetButtonDown("X")){ //&& level != roomsToTop) {
 										
 										choice = 1;
 										
 										//level += 1;
 
 								}
-								if (!isMoving && Input.GetKey ("2") && porte.containsChoice(2)) {
+								if (!isMoving && Input.GetKey ("2") && porte.containsChoice(2) || Input.GetButtonDown("Y")) {
 										
 										choice = 2;
 										
 								}
-								if (!isMoving && Input.GetKey ("3") && porte.containsChoice(3)) {// && level != -roomsToFloor) {
+								if (!isMoving && Input.GetKey ("3") && porte.containsChoice(3) || Input.GetButtonDown("B")) {// && level != -roomsToFloor) {
 										
 										choice = 3;
 										//level -= 1;
