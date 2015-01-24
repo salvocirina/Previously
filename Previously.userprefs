@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ManageRooms.cs">
     <Files>
-      <File FileName="Assets\Scripts\ManageRooms.cs" Line="120" Column="55" />
+      <File FileName="Assets\Scripts\InfoPorte.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\ManageRooms.cs" Line="53" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
