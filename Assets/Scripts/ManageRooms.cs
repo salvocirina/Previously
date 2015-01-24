@@ -112,12 +112,12 @@ public class ManageRooms : MonoBehaviour
 										//level += 1;
 
 								}
-								if (!isMoving && Input.GetKey ("2") && porte.containsChoice(1)) {
+								if (!isMoving && Input.GetKey ("2") && porte.containsChoice(2)) {
 										
 										choice = 2;
 										
 								}
-								if (!isMoving && Input.GetKey ("3") && porte.containsChoice(1)) {// && level != -roomsToFloor) {
+								if (!isMoving && Input.GetKey ("3") && porte.containsChoice(3)) {// && level != -roomsToFloor) {
 										
 										choice = 3;
 										//level -= 1;
