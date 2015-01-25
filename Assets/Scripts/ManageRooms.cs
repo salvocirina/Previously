@@ -60,15 +60,7 @@ public class ManageRooms : MonoBehaviour
 
 		
 		}
-		
-		void FixedUpdate(){
 
-			float timeSinceStarted = Time.time - Time.time;
-			float percentageComplete = timeSinceStarted / 1f;
-
-			transform.position = Vector3.Lerp (hik.transform.position, door.transform.position, percentageComplete);
-
-		}
 		void Update ()
 		{
 		//DEBUG

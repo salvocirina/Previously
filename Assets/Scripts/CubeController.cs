@@ -18,9 +18,9 @@ public class CubeController : MonoBehaviour {
 //	private float deadZone = 0.03f;
 	// Use this for initialization
 	void Start () {
-		i = 4;
+		i = 0;
 		j = 4;
-		k = 4;
+		k = 2;
 		cubeX.transform.position = posX[i].transform.position;
 		cubeY.transform.position = posY[j].transform.position;
 		cubeB.transform.position = posB[k].transform.position;
