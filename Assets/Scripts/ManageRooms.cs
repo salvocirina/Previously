@@ -51,9 +51,6 @@ public class ManageRooms : MonoBehaviour
 			Destroy (rooms [3]);
 			Destroy (rooms [4]);
 
-//		rooms[1]=MakeRoom(level+1,roomsGamesPositions[1]);
-//		rooms[2]=MakeRoom(level,roomsGamesPositions[2]);
-//		rooms[3]=MakeRoom(level-1,roomsGamesPositions[3]);
 
 			porte = rooms [0].transform.GetComponent<InfoPorte> ();
 
@@ -93,13 +90,6 @@ public class ManageRooms : MonoBehaviour
 								support = newRoom.transform.position;
 								if (newRoom.transform.position == currentRoomPosition) {
 					
-										//	if (choice != 1)
-										//		Destroy (rooms [1]);
-										//	if (choice != 2)
-										//		Destroy (rooms [2]);
-										//	if (choice != 3)
-										//		Destroy (rooms [3]);
-					
 										game = null;
 										Destroy (rooms [0]);
 										rooms [0] = newRoom;
@@ -120,8 +110,6 @@ public class ManageRooms : MonoBehaviour
 										
 										choice = 1;
 										
-										//level += 1;
-
 								}
 								if (!isMoving && Input.GetKey ("2") && porte.containsChoice(2) || Input.GetButtonDown("Y")) {
 										
@@ -131,7 +119,7 @@ public class ManageRooms : MonoBehaviour
 								if (!isMoving && Input.GetKey ("3") && porte.containsChoice(3) || Input.GetButtonDown("B")) {// && level != -roomsToFloor) {
 										
 										choice = 3;
-										//level -= 1;
+										
 								}
 				
 								if (choice != 0) {
@@ -160,7 +148,6 @@ public class ManageRooms : MonoBehaviour
 										MoveObject (rooms [0].transform, rooms [0].transform.position, targetRoomPosition, 1);
 										MoveObject (game.transform, game.transform.position, currentRoomPosition, 1);
 
-										//MoveObject(newRoom.transform,newRoom.transform.position,currentRoomPosition,1);
 		
 										if (game.transform.position == currentRoomPosition) {
 												choice = 0;
