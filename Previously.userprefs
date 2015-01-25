@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RoomTimer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CubeController.cs">
     <Files>
-      <File FileName="Assets\Scripts\RoomTimer.cs" Line="53" Column="2" />
+      <File FileName="Assets\Scripts\SmashButtonController.cs" Line="28" Column="3" />
+      <File FileName="Assets\Scripts\ManageRooms.cs" Line="158" Column="13" />
+      <File FileName="Assets\Scripts\RoomTimer.cs" Line="34" Column="5" />
+      <File FileName="Assets\Scripts\CubeController.cs" Line="34" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

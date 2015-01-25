@@ -15,6 +15,13 @@ public class CubeController : MonoBehaviour {
 	private int j;
 	private int k;
 	private bool canScroll;
+	
+	
+	//private GameObject timerObj;
+	//private GameObject stanzaObj;
+	public RoomTimer timer;
+	public ManageRooms stanza;
+	
 //	private float deadZone = 0.03f;
 	// Use this for initialization
 	void Start () {
@@ -24,6 +31,11 @@ public class CubeController : MonoBehaviour {
 		cubeX.transform.position = posX[i].transform.position;
 		cubeY.transform.position = posY[j].transform.position;
 		cubeB.transform.position = posB[k].transform.position;
+		
+		timer = GameObject.Find("Timer").GetComponent<RoomTimer>();
+		timer.GetComponent<RoomTimer>();
+		timer.seconds=6;
+		timer.StartTimer();
 	}
 	
 	// Update is called once per frame
@@ -66,7 +78,10 @@ public class CubeController : MonoBehaviour {
 			canScroll = true;
 		else 
 			canScroll = false;
-		if (cubeX.transform.position == posX[3].transform.position && cubeY.transform.position == posY [3].transform.position && cubeB.transform.position == posB [3].transform.position)
-						winLabel.SetActive (true);
+		if (cubeX.transform.position == posX[3].transform.position && cubeY.transform.position == posY [3].transform.position && cubeB.transform.position == posB [3].transform.position){
+						//winLabel.SetActive (true);
+			timer.StopTimer();
+			stanza.Win();				
+		}
 	}
 }

@@ -35,7 +35,15 @@ public class ManageRooms : MonoBehaviour
 		private InfoPorte porte;
 		private Vector3 support;
 		private float journeyLength;
-
+		
+	public RoomTimer timer;
+	//private GameObject timerObj;
+		
+		public void Win(){
+			endedGame=true;
+			inGame=false;
+		}
+		
 		void Start ()
 		{
 			currentRoomPosition = rooms [0].transform.position;
@@ -54,7 +62,9 @@ public class ManageRooms : MonoBehaviour
 
 			porte = rooms [0].transform.GetComponent<InfoPorte> ();
 
-
+			//timer=timerObj.GetComponent<RoomTimer>();
+			timer.seconds=2;
+			timer.StartTimer();
 		
 		}
 
@@ -100,7 +110,10 @@ public class ManageRooms : MonoBehaviour
 					
 										newRoom = null;
 										endedGame = false;
+										
 					
+										timer.seconds=2;
+										timer.StartTimer();
 								}
 						} else {		
 				
@@ -123,7 +136,11 @@ public class ManageRooms : MonoBehaviour
 								}
 				
 								if (choice != 0) {
-					
+										
+										
+										if(game)
+											game.transform.position=support;
+											
 										if (!isMoving) {
 												
 												porta = 0;
@@ -138,7 +155,7 @@ public class ManageRooms : MonoBehaviour
 													porta=3;
 												}
 					
-					
+												timer.StopTimer();
 												game = MakeRoomGame (choice, roomsGamesPositions [porta]);
 												startTime = 0.0f;
 										}
@@ -147,7 +164,7 @@ public class ManageRooms : MonoBehaviour
 					
 										MoveObject (rooms [0].transform, rooms [0].transform.position, targetRoomPosition, 1);
 										MoveObject (game.transform, game.transform.position, currentRoomPosition, 1);
-
+										support=game.transform.position;
 		
 										if (game.transform.position == currentRoomPosition) {
 												choice = 0;

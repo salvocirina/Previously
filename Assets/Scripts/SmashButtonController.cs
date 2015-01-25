@@ -11,9 +11,24 @@ public class SmashButtonController : MonoBehaviour {
 	private bool disableX;
 	public int difficulty;
 	// Use this for initialization
+	
+	public RoomTimer timer;
+	public ManageRooms stanza;
+	
+	//private GameObject timerObj;
+	//private GameObject stanzaObj;
+	
 	void Start () {
 		A.SetActive (true);
 		difficulty = Random.Range (1, 3);
+		
+		//stanza=stanzaObj.GetComponent<ManageRooms>();
+		//timer=timerObj.GetComponent<RoomTimer>();
+		
+		timer = GameObject.Find("Timer").GetComponent<RoomTimer>();
+		timer.GetComponent<RoomTimer>();
+		timer.seconds=6;
+		timer.StartTimer();
 	}
 	
 	// Update is called once per frame
@@ -47,7 +62,11 @@ public class SmashButtonController : MonoBehaviour {
 		if (smashbar.value != 1) {
 			smashbar.value -= 0.01f;
 		} else {
-			win.SetActive(true);
+			//win.SetActive(true);
+			//audio.PlayOneShot();
+			//audio.Stop();
+			timer.StopTimer();
+			stanza.Win();
 		}
 	}
 }

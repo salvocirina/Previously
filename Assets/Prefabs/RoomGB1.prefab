@@ -208,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100026
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +474,8 @@ MonoBehaviour:
   A: {fileID: 100020}
   X: {fileID: 100016}
   difficulty: 2
+  timer: {fileID: 11400000, guid: 705f3d7ed9c65174ba41302b03f3df5f, type: 2}
+  stanza: {fileID: 11400002, guid: b34186e8fdc32e745958ed5c504e680c, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

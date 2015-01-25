@@ -1681,6 +1681,8 @@ MonoBehaviour:
   cubeB: {fileID: 100012}
   activeCube: {fileID: 100068}
   winLabel: {fileID: 100064}
+  timer: {fileID: 11400000, guid: 705f3d7ed9c65174ba41302b03f3df5f, type: 2}
+  stanza: {fileID: 11400002, guid: b34186e8fdc32e745958ed5c504e680c, type: 2}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
