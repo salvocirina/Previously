@@ -25,7 +25,22 @@ public class RotationController : MonoBehaviour {
 	private int stopIndexB = 0;
 	private int winIndex;
 	// Use this for initialization
+	
+	public RoomTimer timer;
+	public ManageRooms stanza;
+	
+	
 	void Start () {
+	
+		stanza = GameObject.Find("Room").GetComponent<ManageRooms>();
+		stanza.GetComponent<ManageRooms>();
+		
+		timer = GameObject.Find("Timer").GetComponent<RoomTimer>();
+		timer.GetComponent<RoomTimer>();
+		
+		timer.seconds=6;
+		timer.StartTimer();
+	
 		canTurnA = true;
 		canTurnX = true;
 		canTurnY = true;
@@ -111,7 +126,9 @@ public class RotationController : MonoBehaviour {
 		if (!canTurnA) {
 			Debug.Log("A "+stopIndexA + "X "+stopIndexX + "Y "+stopIndexY + "B "+stopIndexB);
 			if (stopIndexA == stopIndexB && stopIndexB == stopIndexY && stopIndexY == stopIndexX)
-				winLabel.SetActive (true);
+				//winLabel.SetActive (true);
+			{timer.StopTimer();
+				stanza.Win();}
 		}
 	}
 

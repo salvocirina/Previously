@@ -32,9 +32,13 @@ public class CubeController : MonoBehaviour {
 		cubeY.transform.position = posY[j].transform.position;
 		cubeB.transform.position = posB[k].transform.position;
 		
+		stanza = GameObject.Find("Room").GetComponent<ManageRooms>();
+		stanza.GetComponent<ManageRooms>();
+		
 		timer = GameObject.Find("Timer").GetComponent<RoomTimer>();
 		timer.GetComponent<RoomTimer>();
-		timer.seconds=6;
+		
+		timer.seconds=4;
 		timer.StartTimer();
 	}
 	

@@ -25,6 +25,10 @@ public class SmashButtonController : MonoBehaviour {
 		//stanza=stanzaObj.GetComponent<ManageRooms>();
 		//timer=timerObj.GetComponent<RoomTimer>();
 		
+		
+		stanza = GameObject.Find("Room").GetComponent<ManageRooms>();
+		stanza.GetComponent<ManageRooms>();
+		
 		timer = GameObject.Find("Timer").GetComponent<RoomTimer>();
 		timer.GetComponent<RoomTimer>();
 		timer.seconds=6;
