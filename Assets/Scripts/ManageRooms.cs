@@ -7,7 +7,9 @@ public class ManageRooms : MonoBehaviour
 		//stanze (prima + dummies per le posizioni)
 		public GameObject[] rooms;
 		private Vector3[]	roomsGamesPositions;
-
+		public Animator anim;
+		public GameObject hik;
+		public GameObject door;
 		//stanze di livello e 
 		public GameObject[] poolRoomsS;
 		public GameObject[] poolRoomsR;
@@ -32,36 +34,51 @@ public class ManageRooms : MonoBehaviour
 		private GameObject game;
 		private InfoPorte porte;
 		private Vector3 support;
+		private float journeyLength;
 
 		void Start ()
 		{
-				currentRoomPosition = rooms [0].transform.position;
-				targetRoomPosition = currentRoomPosition;
-				targetRoomPosition.z = 1.0f;
+			currentRoomPosition = rooms [0].transform.position;
+			targetRoomPosition = currentRoomPosition;
+			targetRoomPosition.z = 1.0f;
 
-				roomsGamesPositions = new Vector3[rooms.Length];
-				for (int i=0; i<rooms.Length; i++)
-						roomsGamesPositions [i] = rooms [i].transform.position;
+			roomsGamesPositions = new Vector3[rooms.Length];
+			for (int i=0; i<rooms.Length; i++)
+					roomsGamesPositions [i] = rooms [i].transform.position;
 
-				Destroy (rooms [1]);
-				Destroy (rooms [2]);
-				Destroy (rooms [3]);
-				Destroy (rooms [4]);
+			Destroy (rooms [1]);
+			Destroy (rooms [2]);
+			Destroy (rooms [3]);
+			Destroy (rooms [4]);
 
 //		rooms[1]=MakeRoom(level+1,roomsGamesPositions[1]);
 //		rooms[2]=MakeRoom(level,roomsGamesPositions[2]);
 //		rooms[3]=MakeRoom(level-1,roomsGamesPositions[3]);
 
-				porte = rooms [0].transform.GetComponent<InfoPorte> ();
+			porte = rooms [0].transform.GetComponent<InfoPorte> ();
+
+
+		
+		}
+		
+		void FixedUpdate(){
+
+			float timeSinceStarted = Time.time - Time.time;
+			float percentageComplete = timeSinceStarted / 1f;
+
+			transform.position = Vector3.Lerp (hik.transform.position, door.transform.position, percentageComplete);
 
 		}
-
 		void Update ()
 		{
-				//DEBUG
+		//DEBUG
 				if (inGame && Input.GetKey (KeyCode.Space)) {
 						endedGame = true;
 						inGame = false;
+						
+				} else if (Input.GetButtonDown ("Start")) {
+//					hik.transform.position = door.transform.position;
+					hik.transform.position = Vector3.Lerp(hik.transform.position, door.transform.position, Time.time *1.7f);
 				}
 	
 				if (!inGame) {
