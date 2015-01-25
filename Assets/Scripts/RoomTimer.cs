@@ -61,6 +61,7 @@ public class RoomTimer : MonoBehaviour {
 				audio.Play();
 				started=false;
 				
+				Application.LoadLevel("GameOver");
 				//MORTE
 				
 			}else if(timer >= delta*18 && !audio.isPlaying && !terzo){

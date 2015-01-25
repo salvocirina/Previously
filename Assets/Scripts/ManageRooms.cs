@@ -40,8 +40,10 @@ public class ManageRooms : MonoBehaviour
 	//private GameObject timerObj;
 		
 		public void Win(){
-			endedGame=true;
-			inGame=false;
+		
+			endedGame = true;
+			inGame = false;
+			
 		}
 		
 		void Start ()
@@ -71,6 +73,7 @@ public class ManageRooms : MonoBehaviour
 		void Update ()
 		{
 		//DEBUG
+		
 				if (inGame && Input.GetKey (KeyCode.Space)) {
 						endedGame = true;
 						inGame = false;
@@ -81,10 +84,16 @@ public class ManageRooms : MonoBehaviour
 				}
 	
 				if (!inGame) {
-	
-						if (endedGame) {
-							if(newRoom)
-								newRoom.transform.position = support;
+						if(endedGame && game==null){
+							endedGame=false;
+						}
+						else if (endedGame) {
+							Debug.Log("ended-inizio : " + endedGame);
+								if(newRoom)
+									newRoom.transform.position = support;
+								Debug.Log("iniziocreastanza");
+								Debug.Log(game);
+								Debug.Log (rooms[0]);
 								if (rooms [0] != game) {
 				
 										Destroy (rooms [0]);
@@ -98,10 +107,12 @@ public class ManageRooms : MonoBehaviour
 								MoveObject (rooms [0].transform, rooms [0].transform.position, targetRoomPosition, 1);
 								MoveObject (newRoom.transform, newRoom.transform.position, currentRoomPosition, 1);
 								support = newRoom.transform.position;
+								
 								if (newRoom.transform.position == currentRoomPosition) {
 					
-										game = null;
-										Destroy (rooms [0]);
+										//game = null;
+										Destroy (game);
+										game=null;
 										rooms [0] = newRoom;
 										score++;
 										Debug.Log (score);
@@ -115,8 +126,14 @@ public class ManageRooms : MonoBehaviour
 										timer.seconds=2;
 										timer.StartTimer();
 								}
+				//Debug.Log("finecreastanza");
+				//Debug.Log("ended-fine : " + endedGame);
+				//Debug.Log(game);
+				//Debug.Log(rooms[0]);
 						} else {		
-				
+				//Debug.Log("INIZIOCREAGIOCO");
+				//Debug.Log(game);
+				//Debug.Log(rooms[0]);
 							//Nulla=0, Button = 1 , Speed = 2, Enigmi = 3
 								
 								if (!isMoving && Input.GetKey ("1") && porte.containsChoice(1) || Input.GetButtonDown("X")){ //&& level != roomsToTop) {
@@ -171,7 +188,11 @@ public class ManageRooms : MonoBehaviour
 												inGame = true;
 												//Parte gioco, se non perdo continua
 										}
+					
 								}
+				//Debug.Log("FINECREAGIOCO");
+				//Debug.Log(game);
+				//Debug.Log(rooms[0]);
 						}
 					
 					

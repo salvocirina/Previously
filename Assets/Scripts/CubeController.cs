@@ -38,7 +38,7 @@ public class CubeController : MonoBehaviour {
 		timer = GameObject.Find("Timer").GetComponent<RoomTimer>();
 		timer.GetComponent<RoomTimer>();
 		
-		timer.seconds=4;
+		timer.seconds=8;
 		timer.StartTimer();
 	}
 	

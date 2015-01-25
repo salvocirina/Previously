@@ -190,6 +190,7 @@
      <Compile Include="Assets\Scripts\RotationController.cs" />
      <Compile Include="Assets\Scripts\SmashActive.cs" />
      <Compile Include="Assets\Scripts\SmashButtonController.cs" />
+     <Compile Include="Assets\replay.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.6.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
