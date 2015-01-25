@@ -14,6 +14,7 @@ public class RoomTimer : MonoBehaviour {
 	private bool primo = false;
 	private bool secondo = false;
 	private bool terzo = false;
+	private bool morto = false;
 	
 	public AudioClip tok;
 	public AudioClip toktok;
@@ -37,6 +38,7 @@ public class RoomTimer : MonoBehaviour {
 		primo = false;
 		secondo = false;
 		terzo = false;
+		morto = false;
 		
 	}
 	
@@ -54,16 +56,22 @@ public class RoomTimer : MonoBehaviour {
 			//Debug.Log("dentro");	
 			timer+=Time.deltaTime;
 			
-			if(timer > seconds && !audio.isPlaying){
+			if(timer > seconds+0.5 && morto ){
+			
 				
-				StopTimer();
+			started=false;
+			Application.LoadLevel("GameOver");
+			
+			//MORTE
+			
+			
+			}else if(timer > seconds && !audio.isPlaying){
+				
+				//StopTimer();
 				audio.volume=1.0f;
 				audio.Play();
-				started=false;
-				
-				Application.LoadLevel("GameOver");
-				//MORTE
-				
+				morto=true;
+	
 			}else if(timer >= delta*18 && !audio.isPlaying && !terzo){
 				audio.volume=0.9f;
 				terzo=true;
@@ -77,7 +85,7 @@ public class RoomTimer : MonoBehaviour {
 				audio.PlayOneShot(toktok);
 			}
 			else if(timer >= delta*1 && !audio.isPlaying && !primo){
-				audio.volume=0.5f;
+				audio.volume=0.7f;
 				primo=true;
 				audio.PlayOneShot(tok);
 			}

@@ -5,7 +5,9 @@ public class replay : MonoBehaviour {
 
 	
 	void Update () {
-		if(Input.GetButton("A"))
+		if(Input.GetButton("Start")){
+		
 			Application.LoadLevel("Rooms");
+		}
 	}
 }

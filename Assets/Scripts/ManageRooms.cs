@@ -65,7 +65,7 @@ public class ManageRooms : MonoBehaviour
 			porte = rooms [0].transform.GetComponent<InfoPorte> ();
 
 			//timer=timerObj.GetComponent<RoomTimer>();
-			timer.seconds=2;
+			timer.seconds=3;
 			timer.StartTimer();
 		
 		}
