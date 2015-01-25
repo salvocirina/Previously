@@ -18,9 +18,9 @@ public class CubeController : MonoBehaviour {
 //	private float deadZone = 0.03f;
 	// Use this for initialization
 	void Start () {
-		i = 0;
-		j = 5;
-		k = 2;
+		i = 4;
+		j = 4;
+		k = 4;
 		cubeX.transform.position = posX[i].transform.position;
 		cubeY.transform.position = posY[j].transform.position;
 		cubeB.transform.position = posB[k].transform.position;
@@ -32,22 +32,22 @@ public class CubeController : MonoBehaviour {
 			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
 				cubeX.transform.position =  posX[i--].transform.position;
 			}
-			else if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
+			else if (Input.GetAxis ("Vertical") < 0 && i < 5 && canScroll) {
 				cubeX.transform.position = posX[i++].transform.position;
 			}
 		} else if (activeCube == cubeY) {
 			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
-				cubeY.transform.position = posY[i--].transform.position;
+				cubeY.transform.position = posY[j--].transform.position;
 			}
-			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
-				cubeY.transform.position = posY[i++].transform.position;
+			else if (Input.GetAxis ("Vertical") < 0 && i < 5 && canScroll) {
+				cubeY.transform.position = posY[j++].transform.position;
 			}
 		} else if (activeCube == cubeB) {
 			if (Input.GetAxis ("Vertical") > 0 && i >= 0 && canScroll) {
-				cubeB.transform.position = posB[i--].transform.position;
+				cubeB.transform.position = posB[k--].transform.position;
 			}
-			if (Input.GetAxis ("Vertical") < 0 && i < 7 && canScroll) {
-				cubeB.transform.position = posB[i++].transform.position;
+			else if(Input.GetAxis ("Vertical") < 0 && i < 5 && canScroll) {
+				cubeB.transform.position = posB[k++].transform.position;
 			}
 		}
 

@@ -8,6 +8,7 @@ public class RotationController : MonoBehaviour {
 	public GameObject satelliteY;
 	public GameObject satelliteB;
 	public float timeToRotate = 2f;
+	public GameObject winLabel;
 	private float t;
 	private bool canTurnA;
 	private bool canTurnX;

@@ -31,6 +31,7 @@ public class ManageRooms : MonoBehaviour
 		private bool endedGame = false;
 		private GameObject game;
 		private InfoPorte porte;
+		private Vector3 support;
 
 		void Start ()
 		{
@@ -66,7 +67,8 @@ public class ManageRooms : MonoBehaviour
 				if (!inGame) {
 	
 						if (endedGame) {
-				
+							if(newRoom)
+								newRoom.transform.position = support;
 								if (rooms [0] != game) {
 				
 										Destroy (rooms [0]);
@@ -79,7 +81,7 @@ public class ManageRooms : MonoBehaviour
 				
 								MoveObject (rooms [0].transform, rooms [0].transform.position, targetRoomPosition, 1);
 								MoveObject (newRoom.transform, newRoom.transform.position, currentRoomPosition, 1);
-				
+								support = newRoom.transform.position;
 								if (newRoom.transform.position == currentRoomPosition) {
 					
 										//	if (choice != 1)

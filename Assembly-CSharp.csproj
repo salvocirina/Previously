@@ -188,6 +188,7 @@
      <Compile Include="Assets\Scripts\ManageRooms.cs" />
      <Compile Include="Assets\Scripts\RoomTimer.cs" />
      <Compile Include="Assets\Scripts\RotationController.cs" />
+     <Compile Include="Assets\Scripts\SmashActive.cs" />
      <Compile Include="Assets\Scripts\SmashButtonController.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.6.txt" />
