@@ -13,6 +13,7 @@ public class SmashButtonController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		A.SetActive (true);
+		difficulty = Random.Range (1, 3);
 	}
 	
 	// Update is called once per frame

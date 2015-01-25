@@ -8,6 +8,7 @@ public class RotationController : MonoBehaviour {
 	public GameObject satelliteY;
 	public GameObject satelliteB;
 	public float timeToRotate = 2f;
+	public GameObject winLabel;
 	private float t;
 	private bool canTurnA;
 	private bool canTurnX;
@@ -24,16 +25,28 @@ public class RotationController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		t += Time.deltaTime;
-		if (t > timeToRotate) {
-			t -= 2f;
-			if(canTurnA)
-				satelliteA.transform.Rotate(0, 0, -45);
-			if(canTurnX)
-			satelliteX.transform.Rotate(0, 0, 45);
-			if(canTurnY)
-			satelliteY.transform.Rotate(0, 0, -45);
-			if(canTurnB)
-			satelliteB.transform.Rotate(0, 0, 45);
+//		if (t > timeToRotate) {
+//			t -= 2f;
+//			if(canTurnA)
+//				satelliteA.transform.Rotate(0, 0, -45);
+//			if(canTurnX)
+//			satelliteX.transform.Rotate(0, 0, 45);
+//			if(canTurnY)
+//			satelliteY.transform.Rotate(0, 0, -45);
+//			if(canTurnB)
+//			satelliteB.transform.Rotate(0, 0, 45);
+//		}
+		if (canTurnA) {
+			satelliteA.transform.Rotate(new Vector3(0,0,1));
+		}
+		if (canTurnX) {
+			satelliteX.transform.Rotate(new Vector3(0,0,-0.9f));
+		}
+		if (canTurnY) {
+			satelliteY.transform.Rotate(new Vector3(0,0,1.1f));
+		}
+		if (canTurnB) {
+			satelliteB.transform.Rotate(new Vector3(0,0,-1));
 		}
 		if (Input.GetButtonDown("A") && canTurnA)
 			canTurnA = false;
